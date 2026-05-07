@@ -10,7 +10,11 @@ import com.ecommerce.system.model.Pedido;
 import com.ecommerce.system.model.enums.StatusPedido;
 import com.ecommerce.system.repository.PedidoRepository;
 
+import lombok.AllArgsConstructor;
+
+
 @Service
+@AllArgsConstructor
 public class PedidoService {
     
     private final PedidoRepository pedidoRepository;
@@ -19,12 +23,6 @@ public class PedidoService {
 
     private final PedidoMapper pedidoMapper;
 
-    public PedidoService (PedidoRepository pedidoRepository, PedidoProducer pedidoProducer, PedidoMapper pedidoMapper){
-
-        this.pedidoRepository = pedidoRepository;
-        this.pedidoProducer = pedidoProducer;
-        this.pedidoMapper = pedidoMapper;
-    }
 
     public PedidoResponseDto criarPedido (PedidoRequestDto request){
 
