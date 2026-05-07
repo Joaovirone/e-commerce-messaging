@@ -7,15 +7,15 @@ import com.ecommerce.system.dto.PedidoRequestDto;
 import com.ecommerce.system.dto.PedidoResponseDto;
 import com.ecommerce.system.model.Pedido;
 
+import lombok.AllArgsConstructor;
+
 
 @Component
+@AllArgsConstructor
 public class PedidoMapper {
     
     private final ModelMapper modelMapper;
 
-    public PedidoMapper (ModelMapper modelMapper){
-        this.modelMapper = modelMapper;
-    }
 
     public Pedido toEntity(PedidoRequestDto pedidoRequestDto){
         return modelMapper.map(pedidoRequestDto, Pedido.class);
