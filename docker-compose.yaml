@@ -3,7 +3,7 @@ services:
     image: 'postgres:15-alpine'
     container_name: 'database_mensageria'
     environment:
-      - 'POSTGRES_DB=root'
+      - 'POSTGRES_DB=pedido_db'
       - 'POSTGRES_PASSWORD=root'
       - 'POSTGRES_USER=root'
     ports:
@@ -11,15 +11,16 @@ services:
     volumes:
       - pgdata_pedido:/var/lib/postgresql/data
     restart: unless-stopped
+    
   rabbitmq:
     image: 'rabbitmq:3-management-alpine'
     container_name: broker_rabbitmq
     environment:
-      - 'RABBITMQ_DEFAULT_PASS=admin'
-      - 'RABBITMQ_DEFAULT_USER=admin123'
+      - 'RABBITMQ_DEFAULT_USER=admin'    
+      - 'RABBITMQ_DEFAULT_PASS=admin123' 
     ports:
       - '5002:5672'
-      -  '15002:15672'
+      - '15002:15672'
     restart: unless-stopped
 
 volumes:
