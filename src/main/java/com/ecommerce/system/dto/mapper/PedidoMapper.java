@@ -22,6 +22,11 @@ public class PedidoMapper {
     }
 
     public PedidoResponseDto toDto(Pedido pedido){
-        return modelMapper.map(pedido, PedidoResponseDto.class);
-    }
+            return new PedidoResponseDto(
+                    pedido.getId(),
+                    pedido.getProdutoId(),
+                    pedido.getQuantidade(),
+                    pedido.getStatus()
+            );
+        }
 }
