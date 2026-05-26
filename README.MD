@@ -41,3 +41,13 @@ Todo o ambiente (Banco de dados, Mensageria e a própria Aplicação) está empa
    ```bash
    git clone [https://github.com/Joaovirone/e-commerce-messaging.git](https://github.com/Joaovirone/e-commerce-messaging.git)
    cd nome-do-repo
+
+2. Suba o conteiner:
+   ```
+   docker compose upp -build
+
+3. Verifique se os serviços estão rodando:
+   ```
+   API (Aplicação): http://localhost:8080
+   
+   RabbitMQ Management UI: http://localhost:15002 (Usuário: admin / Senha: admin123)
